@@ -1,12 +1,13 @@
 NightMiner
 ==========
 
-A very simple pure Python implementation of a CryptoCurrency stratum mining client.
+A very simple pure Python implementation of a CryptoCurrency stratum CPU mining client. Currently supports _scrypt_ (litecoin) and _SHA256d_ (bitcoin).
 
 At a Glance
 -----------
 
-* Simple
+* Simple, one file
+* Supports Scrypt (litecoin, dogecoin, etc) and SHA256d (bitcoin, namecoin, etc)
 * Stratum (and only stratum)
 * Zero dependencies (beyond standard Python libraries)
 * 100% pure Python implementation

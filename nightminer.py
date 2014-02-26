@@ -22,7 +22,8 @@
 
 
 # What is this? 
-# nightminer is menat to be a simple, one file implementation of a stratum CPU 
+#
+# NightMiner is meant to be a simple, one-file implementation of a stratum CPU 
 # miner for CryptoCurrency written in Python favouring understandability 
 # over performance.
 #
@@ -35,6 +36,7 @@
 #   Block Hashing Algorithm - https://litecoin.info/Block_hashing_algorithm
 #   Stratum Mining Protocol - http://mining.bitcoin.cz/stratum-mining/
 #   Scrypt Algorithm        - http://www.tarsnap.com/scrypt/scrypt.pdf
+#   Scrypt Implementation   - https://code.google.com/p/scrypt/source/browse/trunk/lib/crypto/crypto_scrypt-ref.c
 
 import base64, binascii, json, hashlib, hmac, math, socket, struct, sys, threading, time, urlparse
 
@@ -738,7 +740,7 @@ class Miner(SimpleJsonRpcClient):
 
       log('Change difficulty: difficulty=%s' % difficulty, LEVEL_DEBUG)
 
-    # Thi is a reply to...
+    # This is a reply to...
     elif request:
     
       # ...subscribe; set-up the work and request authorization
