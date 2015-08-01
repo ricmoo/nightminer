@@ -102,7 +102,7 @@ When the server has a new job to work on it sends a `mining.notiffy` message. Th
 Calculate the Merkle root, as a binary string.
 
 **mine(nounce_start = 0, nounce_stride = 1)**
-Iterates over all solutions for this job. This will run for an extrememly long time, liekly far longer than ntime would be valid, so you will likely call `stop()` at some point and start on a new job.
+Iterates over all solutions for this job. This will run for an extrememly long time, likely far longer than ntime would be valid, so you will likely call `stop()` at some point and start on a new job.
 
 **stop()**
 Causes the `mine()` method to finish immediately for any thread inside.
