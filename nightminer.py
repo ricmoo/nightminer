@@ -430,16 +430,14 @@ class Job(object):
     t0 = time.time()
 
     # @TODO: test for extranounce != 0... Do I reverse it or not?
-    for extranounce2 in xrange(0, 0xffffffff):
+    for extranounce2 in xrange(0, 0x7fffffff):
 
       # Must be unique for any given job id, according to http://mining.bitcoin.cz/stratum-mining/ but never seems enforced?
       extranounce2_bin = struct.pack('<I', extranounce2)
 
       merkle_root_bin = self.merkle_root_bin(extranounce2_bin)
       header_prefix_bin = swap_endian_word(self._version) + swap_endian_words(self._prevhash) + merkle_root_bin + swap_endian_word(self._ntime) + swap_endian_word(self._nbits)
-
-      for nounce in xrange(nounce_start, 0xffffffff, nounce_stride):
-
+      for nounce in xrange(nounce_start, 0x7fffffff, nounce_stride):
         # This job has been asked to stop
         if self._done:
           self._dt += (time.time() - t0)
